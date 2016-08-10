@@ -1,0 +1,24 @@
+diff a/.gitignore b/.gitignore	(rejected hunks)
+@@ -1,22 +0,0 @@
+-# eclipse
+-bin
+-*.launch
+-.settings
+-.metadata
+-.classpath
+-.project
+-
+-# idea
+-out
+-*.ipr
+-*.iws
+-*.iml
+-.idea
+-
+-# gradle
+-build
+-.gradle
+-
+-# other
+-eclipse
+-run
