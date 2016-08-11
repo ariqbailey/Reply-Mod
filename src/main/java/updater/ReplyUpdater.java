@@ -51,7 +51,7 @@ public class ReplyUpdater implements Runnable{
 			}
 			
 			if( ( content.equals(Reference.VERSION) ) == false ){
-				ClickEvent versionCheckChatClickEvent = new ClickEvent(ClickEvent.Action.OPEN_URL, "http://www.skywars.info/autotip");
+				ClickEvent versionCheckChatClickEvent = new ClickEvent(ClickEvent.Action.OPEN_URL, "http://www.themindofminecraft.com/replymod/");
                 ChatStyle clickableChatStyle = new ChatStyle().setChatClickEvent(versionCheckChatClickEvent);
                 ChatComponentText versionWarningChatComponent = new ChatComponentText((Object)EnumChatFormatting.RED + "Auto reply mod is out of date! Click here to update.");
                 versionWarningChatComponent.setChatStyle(clickableChatStyle);

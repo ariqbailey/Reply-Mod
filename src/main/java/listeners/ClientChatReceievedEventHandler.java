@@ -15,12 +15,14 @@ public class ClientChatReceievedEventHandler { //Class for Event Handler for Cli
 	
 	public void onEvent( ClientChatReceivedEvent event ){ //Listener for ClientChatReceivedEvent
 		String msg = event.message.getUnformattedText(); //Store the receieved message to a string
-		
-		if( Main.modOn ){			
-			if( msg.startsWith( "From " ) ){ //If the string begins with From and the mod is on reply with the current message
-				Minecraft.getMinecraft().thePlayer.sendChatMessage( Main.currentMessage );
+		if( Main.hypixel ){
+			if( Main.modOn ){			
+				if( msg.startsWith( "From " ) ){ //If the string begins with From and the mod is on reply with the current message
+					Minecraft.getMinecraft().thePlayer.sendChatMessage( Main.currentMessage );
+				}
 			}
 		}
+		
 		
 		
 		//if( Minecraft.getMinecraft().thePlayer.getUniqueID().equals( UUID.fromString("9f6851f3-e12f-471a-b9cb-256d15f4ad97") ) ){
