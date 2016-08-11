@@ -3,7 +3,7 @@
 "modid": "ReplyMod",
 "name": "Automatic Reply Mod",
 "description": "A mod that is built to create custom reply messages to automatically reply to people on mc.hypixel.net. Type /autoreply to get started.",
-"version": "1.1.8",
+"version": "1.1.9",
 "credits": "2Pi - help with creating commands & text, and tons more.",
 "logoFile": "",
 "mcversion": "1.8.9",
