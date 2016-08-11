@@ -5,8 +5,8 @@ import java.util.TreeMap;
 
 import commands.ReplyModCommand;
 import listeners.ClientChatReceievedEventHandler;
+import listeners.HypixelChecker;
 import net.minecraft.client.Minecraft;
-import net.minecraft.command.ICommand;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -51,6 +51,7 @@ public class Main implements Serializable{
 		
 		//Register the event listners with the classes that handle the event listening for each particular listener
 		MinecraftForge.EVENT_BUS.register( new ClientChatReceievedEventHandler() );
+		MinecraftForge.EVENT_BUS.register( new HypixelChecker() );
 		ClientCommandHandler.instance.registerCommand( new ReplyModCommand() );
 		//MinecraftForge.EVENT_BUS.register( new CommandEventHandler( config ) );
 	}
