@@ -19,6 +19,8 @@ public class ReplyUpdater implements Runnable{
 	private static HttpURLConnection createConnection( String s ) throws Exception {
 		URL url = new URL(s);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		connection.setConnectTimeout(5000);
+		connection.setReadTimeout(5000);
 		connection.setUseCaches(true);
 		connection.addRequestProperty("User-Agent", "Mozilla/4,76");
 		connection.setDoOutput(true);
