@@ -24,6 +24,7 @@ public class Main implements Serializable{
 	public static String currentCommand, currentMessage;
 	public static Minecraft mc = Minecraft.getMinecraft();
 	public static boolean checkUpdate = false;
+	public static boolean hypixel = false;
 	
 	@EventHandler
 	public void preInit( FMLPreInitializationEvent event ){
