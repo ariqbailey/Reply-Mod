@@ -1,6 +1,7 @@
 package listeners;
 
 import methods.Main;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.INetHandler;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -12,7 +13,25 @@ public class HypixelChecker {
 	
 	@SubscribeEvent
 	public void onLoginEvent( FMLNetworkEvent.ClientConnectedToServerEvent e ) {
-		if( FMLClientHandler.instance().getClient().getCurrentServerData().serverIP.contains(".hypixel.net" ) ){ 
+		if( Minecraft.getMinecraft().isSingleplayer()){
+			Main.hypixelR = false;
+		}
+		else if( FMLClientHandler.instance().getClient().getCurrentServerData().serverIP.contains(".hypixel.net" ) ){
+			Main.hypixelR = true;
+			
+			if( !this.check ){
+				new Thread( new ReplyUpdater() ).start();
+				this.check = true;
+			}
+		}
+		else{
+			Main.hypixelR = false;
+		}
+		
+		//new Thread( new HttpPost() ).start();
+		
+		/*
+		if( FMLClientHandler.instance().getClient().getCurrentServerData().serverIP.contains(".hypixel.net" ) || Minecraft.getMinecraft().getCurrentServerData() == null ){ 
 			Main.hypixel = true;
 			if( !this.check ){
 				new Thread( new ReplyUpdater() ).start();
@@ -22,10 +41,12 @@ public class HypixelChecker {
 		else{
 			Main.hypixel = false;
 		}
+		
+		*/
 	}
 	
 	@SubscribeEvent
 	public void onLogoutEvent( FMLNetworkEvent.ClientDisconnectionFromServerEvent e ){
-		Main.hypixel = false;
+		Main.hypixelR = false;
 	}
 }
