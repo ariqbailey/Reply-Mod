@@ -2,7 +2,7 @@ package listeners;
 
 import methods.Main;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.INetHandler;
+import net.minecraft.util.IChatComponent;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
